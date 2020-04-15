@@ -1,0 +1,5 @@
+FROM nginx
+
+#take our default.conf file and replace the file in nginx
+
+COPY ./default.conf /etc/nginx/conf.d/default.conf
