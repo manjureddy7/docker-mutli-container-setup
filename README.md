@@ -1,4 +1,4 @@
-This is a proper example setup with mutli container.
+This is a proper example setup with multi container.
 
 Run docker-compose up in root folder.
 
