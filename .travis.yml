@@ -3,21 +3,21 @@ services:
   docker
 
 before_install:
-  - docker build -t manureddy/frontend-test -f ./client/Dockerfile.dev ./client
+  - docker build -t anunirva777/frontend-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true manureddy/frontend-test npm test
+  - docker run -e CI=true anunirva777/frontend-test npm test
 
 after_success:
-  - docker build -t manureddy/multi-client ./client
-  - docker build -t manureddy/multi-nginx ./nginx
-  - docker build -t manureddy/multi-server ./server
-  - docker build -t manureddy/multi-worker ./worker
+  - docker build -t anunirva777/multi-client ./client
+  - docker build -t anunirva777/multi-nginx ./nginx
+  - docker build -t anunirva777/multi-server ./server
+  - docker build -t anunirva777/multi-worker ./worker
   # Login to Docker CLI
   # store credentials username/password to env variables in travis CI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Now push these prod images to docker hub
-  - docker push manureddy/multi-client
-  - docker push manureddy/multi-nginx
-  - docker push manureddy/multi-server
-  - docker push manureddy/multi-worker
+  - docker push anunirva777/multi-client
+  - docker push anunirva777/multi-nginx
+  - docker push anunirva777/multi-server
+  - docker push anunirva777/multi-worker
